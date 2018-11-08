@@ -3,6 +3,7 @@ package by.epam.javatraining.maintask1.goodkevich.veiw;
 import java.util.Scanner;
 
 import by.epam.javatraining.maintask1.goodkevich.model.SuperVector;
+import by.epam.javatraining.maintask1.goodkevich.model.SuperVector2D;
 
 public class Veiw {
 	private static Scanner in;
@@ -20,18 +21,6 @@ public class Veiw {
 		double M = in.nextDouble();
 		return M;
 	}
-	public static void InputDoubleArray(double Array[]) {
-		for(int i=0; i < Array.length; i++) {
-			Array[i] = in.nextDouble();
-		}
-	}
-	public static void InputDoubleArray2(double Array2[][]) {
-		for(int i=0; i<Array2.length; i++) {
-			for(int j=0; j<Array2[i].length; j++) {
-				Array2[i][j] = in.nextDouble();
-			}
-		}
-	}
 	public static void OutputInt(int m) {
 		System.out.println(m);
 	}
@@ -46,20 +35,26 @@ public class Veiw {
 			System.out.println("false");
 		}
 	}
+	public static void OutputString(String str) {
+		System.out.println(str);
+	}
 	public static void outputDoublevector(SuperVector Vector) {
 		for(int i=0; i < Vector.size(); i++) {
 			System.out.print(Vector.get(i)+"\n");
 		}
 	}
-	public static void OutputDoubleArray2(double Array2[][]) {
-		for(int i=0; i<Array2.length; i++) {
-			for(int j=0; j<Array2[i].length; j++) {
-				System.out.print(Array2[i][j]+" ");
+	public static void OutputDoublevector2D(SuperVector2D Vector) {
+		for(int i=0; i < Vector.size2D(); i++) {
+			for(int j=0; j < Vector.size2D(); j++) {
+				System.out.print(Vector.get2D(i, j)+" ");
 			}
 			System.out.print("\n");
 		}
 	}
 	public static void OutputTheNumberOfTask(int num) {
 		System.out.print("The answer on "+ num +" task\n");
+	}
+	public static void OutBorder() {
+		System.out.println("---------------");
 	}
 }

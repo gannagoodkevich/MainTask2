@@ -206,7 +206,7 @@ class ArrayTest {
 		double ResultArray[] = {1.0, 3.0, 5.0};
 		SuperVector Vector = new SuperVector(TestArray);
 		SuperVector Vector1 = new SuperVector(ResultArray);
-		if( Vector.equalVector(SortVector.bubbleSort(Vector), Vector1)== false) {
+		if( Vector.equalVector(SortVector.bubbleSort(Vector), Vector1) == false) {
 			fail("Fail");
 		}
 	}
@@ -256,7 +256,7 @@ class ArrayTest {
 		double ResultArray[] = {1.0, 3.0, 5.0};
 		SuperVector Vector = new SuperVector(TestArray);
 		SuperVector Vector1 = new SuperVector(ResultArray);
-		if( Vector.equalVector(SortVector.quickSort(Vector, 0, Vector.size()-1), Vector1)== false) {
+		if( Vector.equalVector(SortVector.quickSort(Vector, 0, Vector.size()-1), Vector1) == false) {
 			fail("Fail");
 		}
 	}
@@ -274,8 +274,9 @@ class ArrayTest {
 	void MaxValueArray2Test() {
 		double TestArray[][] = {{1.1, 2,2}, 
 								{0.0, 3,0}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
 		double Result = 3.0;
-		if( VectorCalculations.MaxValueArray2(TestArray) != Result) {
+		if( Vector2DCalculations.MaxValueArray2(Vector) != Result) {
 			fail("Fail");
 		}
 	}
@@ -283,8 +284,9 @@ class ArrayTest {
 	void MinValueArray2Test() {
 		double TestArray[][] = {{1.1, 2,2}, 
 								{0.0, 3,0}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
 		double Result = 0.0;
-		if( VectorCalculations.MinValueArray2(TestArray) != Result) {
+		if( Vector2DCalculations.MinValueArray2(Vector) != Result) {
 			fail("Fail");
 		}
 	}
@@ -292,8 +294,9 @@ class ArrayTest {
 	void AverageArray2Test() {
 		double TestArray[][] = {{1.1, 1.1}, 
 								{1.1, 1.1}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
 		double Result = 1.1;
-		if( VectorCalculations.AverageArray2(TestArray) != Result) {
+		if( Vector2DCalculations.AverageArray2(Vector) != Result) {
 			fail("Fail");
 		}
 	}
@@ -301,8 +304,9 @@ class ArrayTest {
 	void GeometricMeanArray2Test() {
 		double TestArray[][] = {{2, 1}, 
 								{1, 2}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
 		double Result = 2;
-		if( VectorCalculations.GeometricMeanArray2(TestArray) != Result) {
+		if( Vector2DCalculations.GeometricMeanArray2(Vector) != Result) {
 			fail("Fail");
 		}
 	}
@@ -310,7 +314,44 @@ class ArrayTest {
 	void SemetricArray2Test() {
 		double TestArray[][] = {{1, 1}, 
 								{1, 1}};
-		if( !VectorCalculations.SemetricArray2(TestArray)) {
+		SuperVector2D Vector = new SuperVector2D(TestArray);
+		if( !Vector2DCalculations.SemetricArray2(Vector)) {
+			fail("Fail");
+		}
+	}
+	@Test
+	void MinLocalValueArray2Test() {
+		double TestArray[][] = {{1, 1, 1}, 
+								{1, 0, 1},
+								{1, 1, 1}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
+		String result = "1 1";
+		if( !Vector2DCalculations.MinLocalValueArray2(Vector).equals(result)) {
+			fail("Fail");
+		}
+	}
+	@Test
+	void MaxLocalValueArray2Test() {
+		double TestArray[][] = {{1, 1, 1}, 
+								{1, 3, 1},
+								{1, 1, 1}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
+		String result = "1 1";
+		if( !Vector2DCalculations.MaxLocalValueArray2(Vector).equals(result)) {
+			fail("Fail");
+		}
+	}
+	@Test
+	void transporationTest() {
+		double TestArray[][] = {{1, 1, 1}, 
+								{2, 3, 1},
+								{2, 2, 1}};
+		double ResArray[][] = {{1, 2, 2}, 
+							   {1, 3, 2},
+							   {1, 1, 1}};
+		SuperVector2D Vector = new SuperVector2D(TestArray);
+		SuperVector2D Vector1 = new SuperVector2D(ResArray);
+		if( !Vector.equalVector2D(Vector2DCalculations.transporation(Vector), Vector1)) {
 			fail("Fail");
 		}
 	}

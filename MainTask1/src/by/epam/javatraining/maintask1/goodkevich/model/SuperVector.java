@@ -8,10 +8,15 @@ public class SuperVector {
 	
 	public SuperVector() {
 		array = new double[DEFOULT_SIZE];
+		count = DEFOULT_SIZE;
 	}
 	
 	public SuperVector(int size) {
+		if(size <= 0) {
+			throw new IllegalStateException();
+		}
 		array = new double[size];
+		count = size;
 	}
 	
 	public SuperVector(double array[]) {
@@ -20,7 +25,7 @@ public class SuperVector {
 	}
 	
 	public void copyVector(SuperVector Vector, SuperVector Vector1) {
-		for(int i=0; i < Vector.size(); i++) {
+		for(int i = 0; i < Vector.size(); i++) {
 			Vector1.set(i, Vector.get(i));
 		}
 	}
