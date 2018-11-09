@@ -26,11 +26,11 @@ public class Main {
 	// public static Logger LOG = Logger.getRootLogger();
 	public static void main(String[] args) {
 		int size1 = Utiles.setVectorSizebyUser();
-		int size2 = Utiles.setVectorSizeRandom();
+		int size2 = Utiles.setVectorSizeRandom(1, 20);
 		SuperVector vector1 = new SuperVector(size1);
 		SuperVector vector2 = new SuperVector(size2);
-		vector1.copyVector(Utiles.createVectorbyUser(size1), vector1);
-		vector2.copyVector(Utiles.createVectorRendom(size2), vector2);
+		vector1 = Utiles.createVectorbyUser(size1);
+		vector2 = Utiles.createVectorRendom(size2, 26, 100);
 		Task11(vector1);
 		Task12(vector1);
 		Task13(vector1);
@@ -39,11 +39,11 @@ public class Main {
 		Task16(vector2);
 		Task17(vector2);
 		size1 = Utiles.setVectorSizebyUser();
-		size2 = Utiles.setVectorSizeRandom();
+		size2 = Utiles.setVectorSizeRandom(1, 20);
 		SuperMatrix vector11 = new SuperMatrix(size1);
 		SuperMatrix vector22 = new SuperMatrix(size2);
-		Utiles.createVector2DbyUser(size1).copySuperMatrix(vector11);
-		Utiles.createVector2DRendom(size2).copySuperMatrix(vector22);
+		vector11 = Utiles.createVector2DbyUser(size1);
+		vector22 = Utiles.createVector2DRendom(size2, 36, 100);
 		Task21(vector11);
 		Task22(vector11);
 		Task23(vector22);

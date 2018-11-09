@@ -106,8 +106,7 @@ public class VectorCalculation {
 	}
 
 	public static boolean binorySearch(SuperVector vector, double element) {
-		SuperVector vector1 = new SuperVector(vector.size());
-		vector.copyVector(SortVector.bubbleSort(vector), vector1);
+		vector = SortVector.bubbleSort(vector);
 		boolean f = false;
 		if (vector != null) {
 			int low = 0, high = vector.size(), mid;
