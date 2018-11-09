@@ -6,8 +6,13 @@ import by.epam.javatraining.maintask1.goodkevich.model.entity.SuperVector;
 
 public class SortVector {
 
-	// !!!
 	public static SuperVector bubbleSort(SuperVector vector) {
+		if(!VectorCalculation.sortCheckHigher(vector)) {
+			bubbleActuallSort(vector);
+		}
+		return vector;
+	}
+	public static SuperVector bubbleActuallSort(SuperVector vector) {
 		if (!VectorCalculation.sortCheckHigher(vector)) {
 			for (int i = 1; i < vector.size(); i++) {
 				for (int j = 0; j < vector.size() - 1; j++) {
