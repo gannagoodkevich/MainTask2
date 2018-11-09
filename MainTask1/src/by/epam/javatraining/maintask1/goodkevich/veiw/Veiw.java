@@ -1,60 +1,72 @@
+//Here you can see methods for user interface(inputting and outputting date on console)
+
 package by.epam.javatraining.maintask1.goodkevich.veiw;
 
 import java.util.Scanner;
 
-import by.epam.javatraining.maintask1.goodkevich.model.SuperVector;
-import by.epam.javatraining.maintask1.goodkevich.model.SuperVector2D;
+import by.epam.javatraining.maintask1.goodkevich.model.entity.SuperMatrix;
+import by.epam.javatraining.maintask1.goodkevich.model.entity.SuperVector;
 
 public class Veiw {
 	private static Scanner in;
 	static {
-		in = new Scanner (System.in);
+		in = new Scanner(System.in);
 	}
-	public static void Close() {
+
+	public static void close() {
 		in.close();
 	}
-	public static int InputInt() {
-		int M = in.nextInt();
-		return M;
+
+	public static int inputInt() {
+		int m = in.nextInt();
+		return m;
 	}
-	public static double InputDouble() {
-		double M = in.nextDouble();
-		return M;
+
+	public static double inputDouble() {
+		double m = in.nextDouble();
+		return m;
 	}
-	public static void OutputInt(int m) {
+
+	public static void outputInt(int m) {
 		System.out.println(m);
 	}
-	public static void OutputDouble(double m) {
+
+	public static void outputDouble(double m) {
 		System.out.println(m);
 	}
-	public static void OutputBoolean(boolean f) {
-		if(f) {
+
+	public static void outputBoolean(boolean f) {
+		if (f) {
 			System.out.println("true");
-		}
-		else {
+		} else {
 			System.out.println("false");
 		}
 	}
-	public static void OutputString(String str) {
+
+	public static void outputString(String str) {
 		System.out.println(str);
 	}
-	public static void outputDoublevector(SuperVector Vector) {
-		for(int i=0; i < Vector.size(); i++) {
-			System.out.print(Vector.get(i)+"\n");
+
+	public static void outputDoublevector(SuperVector vector) {
+		for (int i = 0; i < vector.size(); i++) {
+			System.out.print(vector.get(i) + "\n");
 		}
 	}
-	public static void OutputDoublevector2D(SuperVector2D Vector) {
-		for(int i=0; i < Vector.size2D(); i++) {
-			for(int j=0; j < Vector.size2D(); j++) {
-				System.out.print(Vector.get2D(i, j)+" ");
+
+	public static void outputDoublevector2D(SuperMatrix vector) {
+		for (int i = 0; i < vector.size(); i++) {
+			for (int j = 0; j < vector.size(); j++) {
+				System.out.print(vector.get(i, j) + " ");
 			}
 			System.out.print("\n");
 		}
 	}
-	public static void OutputTheNumberOfTask(int num) {
-		System.out.print("The answer on "+ num +" task\n");
+
+	public static void outputTheNumberOfTask(int num) {
+		System.out.print("The answer on " + num + " task\n");
 	}
-	public static void OutBorder() {
+
+	public static void outBorder() {
 		System.out.println("---------------");
 	}
 }
