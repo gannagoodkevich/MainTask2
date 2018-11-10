@@ -17,7 +17,7 @@ import by.epam.javatraining.maintask1.goodkevich.model.entity.SuperVector;
 //import org.apache.log4j.Logger;
 
 import by.epam.javatraining.maintask1.goodkevich.model.logic.SortVector;
-import by.epam.javatraining.maintask1.goodkevich.model.logic.Utiles;
+import by.epam.javatraining.maintask1.goodkevich.veiw.Utiles;
 import by.epam.javatraining.maintask1.goodkevich.model.logic.MatrixCalculation;
 import by.epam.javatraining.maintask1.goodkevich.model.logic.VectorCalculation;
 import by.epam.javatraining.maintask1.goodkevich.veiw.Veiw;

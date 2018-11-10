@@ -1,6 +1,6 @@
 //That methods are for initialization for vectors
 
-package by.epam.javatraining.maintask1.goodkevich.model.logic;
+package by.epam.javatraining.maintask1.goodkevich.veiw;
 
 import java.util.Random;
 
